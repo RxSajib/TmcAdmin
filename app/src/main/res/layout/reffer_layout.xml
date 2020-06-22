@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:background="@drawable/click_ripple">
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_alignParentRight="true"
+        android:id="@+id/ReferTextID"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="7dp"
+        android:text="Refer: Error"
+        android:fontFamily="sans-serif"
+        android:textSize="10sp"
+        android:textColor="@android:color/holo_red_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+
+    <RelativeLayout
+        android:id="@+id/layoutI"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp">
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ReferImageViewID"
+            android:layout_width="70dp"
+            android:elevation="1dp"
+            android:background="@drawable/circle_image"
+            android:layout_height="70dp">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_toRightOf="@id/layoutI"
+        android:layout_marginLeft="7dp"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/RefferUsernameId"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:text="Username Error"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.textview.MaterialTextView>
+
+        <TextView
+            android:id="@+id/ReferEmailAddressID"
+            android:layout_below="@id/RefferUsernameId"
+            android:layout_marginTop="5dp"
+            android:textSize="14sp"
+            android:textColor="#808080"
+            android:text="email address Error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

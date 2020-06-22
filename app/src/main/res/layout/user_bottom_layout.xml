@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheed_background">
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/FirstLayoutID"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="7dp">
+
+        <View
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="150dp"
+            android:background="#C1C1C1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+
+        </View>
+
+
+        <RelativeLayout
+            android:id="@+id/TopLayoutID"
+            android:layout_alignParentRight="true"
+            android:layout_width="100dp"
+            android:layout_height="100dp">
+
+            <RelativeLayout
+                android:elevation="1dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/Coinicon"
+                    android:src="@drawable/coin"
+                    android:layout_width="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="30dp">
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/WineCoin"
+                    android:layout_below="@+id/Coinicon"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@android:color/white"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+            </RelativeLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/CircleImageID"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/circle_image"
+                android:elevation="0.5dp">
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+        </RelativeLayout>
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/TopLayoutID">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/Usernametext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sajib Roy"
+                android:textColor="#6A6A6A"
+                android:textSize="17sp">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/EmailAddressID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Usernametext"
+                android:layout_marginTop="7dp"
+                android:text="Email address"
+                android:textColor="#6A6A6A"
+                android:textSize="17sp">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/CoinTextID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/EmailAddressID"
+                android:layout_marginTop="7dp"
+                android:text="Coin Earn"
+                android:textColor="#6A6A6A"
+                android:textSize="17sp">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/FirstLayoutID"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Location"
+            android:textSize="15sp"></com.google.android.material.textview.MaterialTextView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/TypeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/type"
+            android:layout_marginTop="7dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Bkash"
+            android:textColor="#ff22"
+            android:textSize="15sp">
+
+        </com.google.android.material.textview.MaterialTextView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/idname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TypeText"
+            android:layout_marginTop="7dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="PhoneNumber"
+            android:textSize="15sp">
+
+        </com.google.android.material.textview.MaterialTextView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:id="@+id/PhonNumberID"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idname"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="65654651"
+            android:textColor="#ff22"
+            android:textSize="15sp">
+
+        </com.google.android.material.textview.MaterialTextView>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

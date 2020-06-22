@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/click_ripple"
+    android:layout_height="90dp">
+
+
+    <RelativeLayout
+        android:id="@+id/layoutI"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp">
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/WinnrImageID"
+            android:layout_width="70dp"
+            android:elevation="1dp"
+            android:background="@drawable/circle_image"
+            android:layout_height="70dp">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_toRightOf="@id/layoutI"
+        android:layout_marginLeft="7dp"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/UsernameID"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:text="Username"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.textview.MaterialTextView>
+
+        <TextView
+            android:id="@+id/userEmailAddressID"
+            android:layout_below="@id/UsernameID"
+            android:layout_marginTop="5dp"
+            android:textSize="14sp"
+            android:textColor="#808080"
+            android:text="email address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/EarnId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/CurrentcontextID"
+                android:textSize="13sp"
+                android:text="Wine Coin"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </com.google.android.material.textview.MaterialTextView>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/WineCoinTextID"
+                android:layout_toRightOf="@+id/CurrentcontextID"
+                android:textSize="13sp"
+                android:layout_centerVertical="true"
+                android:textColor="@android:color/holo_red_light"
+                android:text="400"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </com.google.android.material.textview.MaterialTextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/EarnId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/Withdrawn"
+                android:textSize="13sp"
+                android:text="Withdrawn Coin"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </com.google.android.material.textview.MaterialTextView>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_toRightOf="@+id/Withdrawn"
+                android:textSize="13sp"
+                android:layout_centerVertical="true"
+                android:textColor="@android:color/holo_red_light"
+                android:text="700"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </com.google.android.material.textview.MaterialTextView>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
