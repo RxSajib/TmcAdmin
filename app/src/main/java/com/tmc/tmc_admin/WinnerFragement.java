@@ -69,7 +69,7 @@ public class WinnerFragement extends Fragment {
 
         Mprogress = new ProgressDialog(getContext());
         nouser = view.findViewById(R.id.NouserAccountID);
-        nouser.setVisibility(View.INVISIBLE);
+
         Mwinerdatabase = FirebaseDatabase.getInstance().getReference().child("WineCoin");
 
         getmy_view();

@@ -38,16 +38,17 @@
             <ImageView
                 android:id="@+id/NousericonID"
                 android:src="@drawable/reffer_icon"
-                android:layout_width="80dp"
+                android:layout_width="70dp"
                 android:layout_centerHorizontal="true"
-                android:layout_height="80dp">
+                android:layout_height="70dp">
             </ImageView>
 
             <TextView
                 android:layout_below="@+id/NousericonID"
                 android:layout_marginTop="10dp"
                 android:textColor="#8A8989"
-                android:textSize="20sp"
+                android:textSize="17sp"
+                android:fontFamily="sans-serif-smallcaps"
                 android:text="No Referral found"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">

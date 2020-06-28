@@ -72,7 +72,7 @@ public class Referral_Fragement extends Fragment {
         });
 
         norefferlayout = view.findViewById(R.id.Refferlayout);
-        norefferlayout.setVisibility(View.INVISIBLE);
+
         recyclerView = view.findViewById(R.id.RefferViewID);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -91,7 +91,98 @@ public class Referral_Fragement extends Fragment {
 
     private void start_searhing(String text){
 
-        String email_address = text;
+        String query = text;
+
+
+        final Query firebaseQry = Mreferral_database.orderByChild("_refer_name").startAt(query).endAt(query + "\uf8ff");
+
+
+
+
+        //// data search
+        FirebaseRecyclerAdapter<user_info, RefferHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<user_info, RefferHolder>(
+                user_info.class,
+                R.layout.reffer_layout,
+                RefferHolder.class,
+                firebaseQry
+        ) {
+            @Override
+            protected void populateViewHolder(final RefferHolder refferHolder, user_info user_info, int i) {
+
+                final String UID = getRef(i).getKey();
+                Mreferral_database.child(UID)
+                        .addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                if (dataSnapshot.exists()) {
+                                    norefferlayout.setVisibility(View.INVISIBLE);
+                                    if (dataSnapshot.hasChild("_id")) {
+                                        String user_id = dataSnapshot.child("_id").getValue().toString();
+
+                                        if(dataSnapshot.hasChild("_refer_name")){
+                                            String name = dataSnapshot.child("_refer_name").getValue().toString();
+                                            refferHolder.setrefer_al("Referral: "+name);
+                                        }
+
+
+                                        Muser_database.child(user_id)
+                                                .addValueEventListener(new ValueEventListener() {
+                                                    @Override
+                                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                                        if (dataSnapshot.exists()) {
+                                                            if (dataSnapshot.hasChild("uri")) {
+                                                                String uriget = dataSnapshot.child("uri").getValue().toString();
+                                                                refferHolder.seruserpic(uriget);
+                                                            }
+                                                            if (dataSnapshot.hasChild("email_address")) {
+                                                                String email_addressget = dataSnapshot.child("email_address").getValue().toString();
+                                                                refferHolder.setUseremailset(email_addressget);
+                                                            }
+                                                            if (dataSnapshot.hasChild("name")) {
+                                                                String nameget = dataSnapshot.child("name").getValue().toString();
+                                                                refferHolder.setUsernameset(nameget);
+                                                            }
+
+
+                                                            refferHolder.Mview.setOnClickListener(new View.OnClickListener() {
+                                                                @Override
+                                                                public void onClick(View v) {
+
+                                                                }
+                                                            });
+
+                                                        } else {
+                                                            Toast.makeText(getContext(), "no data", Toast.LENGTH_LONG).show();
+                                                        }
+                                                    }
+
+                                                    @Override
+                                                    public void onCancelled(DatabaseError databaseError) {
+
+                                                    }
+                                                });
+
+                                    }
+                                } else {
+                                    norefferlayout.setVisibility(View.VISIBLE);
+
+                                }
+
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
+            }
+        };
+
+        recyclerView.setAdapter(firebaseRecyclerAdapter);
+        //// data search
+
 
 
     }
